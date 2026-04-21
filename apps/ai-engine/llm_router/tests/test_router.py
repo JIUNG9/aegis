@@ -78,7 +78,7 @@ async def test_sensitive_prompt_goes_to_ollama() -> None:
     resp = await router.complete(
         [{
             "role": "user",
-            "content": "Pod user-service-7fbd4c9f-xk2ps on prod.api.placen.co.kr OOM-killed",
+            "content": "Pod user-service-7fbd4c9f-xk2ps on prod.api.acme-corp.com OOM-killed",
         }]
     )
     assert resp.backend == "ollama"
@@ -231,10 +231,10 @@ async def test_stream_routes_like_complete() -> None:
 
 
 def test_decide_explains_signals() -> None:
-    router, _, _ = _mk_router(sensitive_keywords=["Placen"])
+    router, _, _ = _mk_router(sensitive_keywords=["acme-corp"])
     d = router.decide(
-        [{"role": "user", "content": "Placen prod is down"}]
+        [{"role": "user", "content": "acme-corp prod is down"}]
     )
     assert d.backend == "ollama"
     assert d.sensitivity is not None
-    assert any("keyword:Placen" in s for s in d.sensitivity.signals)
+    assert any("keyword:acme-corp" in s for s in d.sensitivity.signals)

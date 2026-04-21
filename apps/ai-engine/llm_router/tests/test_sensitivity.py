@@ -19,11 +19,11 @@ from llm_router.sensitivity import classify_sensitivity
 SENSITIVE_FIXTURES: list[tuple[str, str]] = [
     (
         "real_email",
-        "Investigate error from user jiung.gu@placen.co.kr in production",
+        "Investigate error from user alice.dev@acme-corp.com in production",
     ),
     (
         "real_hostname",
-        "Pod on prod.api.placen.co.kr is returning 503",
+        "Pod on prod.api.acme-corp.com is returning 503",
     ),
     (
         "k8s_pod_id",
@@ -51,7 +51,7 @@ SENSITIVE_FIXTURES: list[tuple[str, str]] = [
     ),
     (
         "company_keyword",
-        "The Coupang S3 bucket is misconfigured and public",
+        "The acme-corp S3 bucket is misconfigured and public",
     ),
     (
         "real_ipv4",
@@ -68,7 +68,7 @@ SENSITIVE_FIXTURES: list[tuple[str, str]] = [
 def test_sensitive_fixtures_are_classified_sensitive(name: str, text: str) -> None:
     result = classify_sensitivity(
         text,
-        extra_keywords=["Coupang", "Placen", "NAVER"],
+        extra_keywords=["acme-corp", "customer-xyz"],
     )
     assert result.is_sensitive, (
         f"{name!r} should be sensitive/borderline but got {result.level}; "
