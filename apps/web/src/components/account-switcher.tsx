@@ -130,7 +130,7 @@ export function AccountSwitcher() {
                     ? "Google Cloud Platform"
                     : provider === "azure"
                       ? "Microsoft Azure"
-                      : "Naver Cloud"}
+                      : "Other Cloud"}
               </DropdownMenuLabel>
               {providerAccounts.map((account) => (
                 <DropdownMenuItem

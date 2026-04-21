@@ -124,7 +124,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "mem-1",
     name: "June Gu",
-    email: "june.gu@placen.ai",
+    email: "june.gu@acme-corp.com",
     role: "Admin",
     initials: "JG",
     accountAccess: ["nexus", "shared", "nowwaiting", "dodopoint"],
@@ -133,7 +133,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "mem-2",
     name: "Seungho Park",
-    email: "sh.park@placen.ai",
+    email: "sh.park@acme-corp.com",
     role: "Admin",
     initials: "SP",
     accountAccess: ["nexus", "shared", "nowwaiting"],
@@ -142,7 +142,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "mem-3",
     name: "Minjae Kim",
-    email: "mj.kim@placen.ai",
+    email: "mj.kim@acme-corp.com",
     role: "Member",
     initials: "MK",
     accountAccess: ["nexus", "shared"],
@@ -151,7 +151,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "mem-4",
     name: "Yujin Lee",
-    email: "yj.lee@placen.ai",
+    email: "yj.lee@acme-corp.com",
     role: "Member",
     initials: "YL",
     accountAccess: ["nowwaiting", "dodopoint"],
@@ -160,7 +160,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "mem-5",
     name: "Donghyun Choi",
-    email: "dh.choi@placen.ai",
+    email: "dh.choi@acme-corp.com",
     role: "Viewer",
     initials: "DC",
     accountAccess: ["nexus"],
@@ -183,7 +183,7 @@ interface SSOConfig {
 
 const DEFAULT_SSO: SSOConfig = {
   providerName: "Keycloak",
-  discoveryUrl: "https://sso.placen.ai/realms/aegis/.well-known/openid-configuration",
+  discoveryUrl: "https://sso.acme-corp.com/realms/aegis/.well-known/openid-configuration",
   clientId: "aegis-dashboard",
   clientSecret: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
   realm: "aegis",
